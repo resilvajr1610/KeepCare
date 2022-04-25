@@ -1,5 +1,16 @@
 export '../views/splash.dart';
 export '../views/Home.dart';
 export '../views/Login.dart';
+export '../views/Profile.dart';
+export '../views/Professionals.dart';
+export '../views/Search.dart';
+export '../views/MapProfissionals.dart';
+export '../views/Favorites.dart';
 export '../Model/colors.dart';
 export '../Model/RouteGenerator.dart';
+export '../widget/Buttons.dart';
+export '../widget/GoogleButton.dart';
+export '../widget/inputRegister.dart';
+export '../widget/dropDownItens.dart';
+export '../widget/ListProfessionals.dart';
+export '../widget/WidgetFavorites.dart';

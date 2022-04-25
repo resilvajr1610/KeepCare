@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:keepcare/widget/Buttons.dart';
 import '../Model/export.dart';
 
 class Home extends StatefulWidget {
@@ -33,6 +32,7 @@ class _HomeState extends State<Home> {
                   text: "Comece agora",
                   icons: Icons.facebook,
                   size: 0,
+                  color: PaletteColor.primiryColor,
               ),
             ),
             Padding(
