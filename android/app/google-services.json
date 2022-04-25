@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "949488845390",
+    "project_id": "keepcare-7a793",
+    "storage_bucket": "keepcare-7a793.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:949488845390:android:7ae6f5a7c3787d5732791f",
+        "android_client_info": {
+          "package_name": "com.keepcare.keepcare"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "949488845390-7h8vtukibv5nhe9v445upuimgs0ut4md.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBnyIy3rePlT2uTFtJ64NxLhPnwZ6lKf3Y"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "949488845390-7h8vtukibv5nhe9v445upuimgs0ut4md.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
