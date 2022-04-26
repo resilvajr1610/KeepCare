@@ -7,10 +7,21 @@ void main() async{
   WidgetsFlutterBinding.ensureInitialized();
   await Firebase.initializeApp();
 
-  runApp(MaterialApp(
-    debugShowCheckedModeBanner: false,
-    home: Splash(),
-    initialRoute: "/",
-    onGenerateRoute: RouteGenerator.generateRoute,
-  ));
+  runApp(Start());
 }
+
+class Start extends StatelessWidget {
+  const Start({Key? key}) : super(key: key);
+
+  @override
+  Widget build(BuildContext context) =>ChangeNotifierProvider(
+    create: (context)=>GoogleSignInProvider(),
+    child: MaterialApp(
+      debugShowCheckedModeBanner: false,
+      home: Splash(),
+      initialRoute: "/",
+      onGenerateRoute: RouteGenerator.generateRoute,
+    ),
+  );
+}
+

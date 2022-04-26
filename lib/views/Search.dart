@@ -1,8 +1,4 @@
-import 'dart:async';
-import 'package:flutter/material.dart';
-import 'package:smooth_star_rating_nsafe/smooth_star_rating.dart';
 import '../Model/export.dart';
-import 'package:cloud_firestore/cloud_firestore.dart';
 
 class Search extends StatefulWidget {
   const Search({Key? key}) : super(key: key);
@@ -13,10 +9,8 @@ class Search extends StatefulWidget {
 
 class _SearchState extends State<Search> {
 
-  final _controllerGender = StreamController<QuerySnapshot>.broadcast();
   TextEditingController _controllerName = TextEditingController();
   TextEditingController _controllerLastName = TextEditingController();
-  TextEditingController _controllerDate = TextEditingController();
   TextEditingController _controllerCity = TextEditingController();
   double _rating = 4;
 
@@ -106,7 +100,9 @@ class _SearchState extends State<Search> {
                       text: "Pesquisar",
                       icons: Icons.facebook,
                       size: 0,
-                      color: PaletteColor.primiryColor,
+                      colorButton: PaletteColor.primiryColor,
+                      colorIcon: PaletteColor.white,
+                      colorText: PaletteColor.white,
                     ),
                   ),
                 ]),

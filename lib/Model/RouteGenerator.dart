@@ -34,6 +34,10 @@ class RouteGenerator{
           return MaterialPageRoute(
               builder: (_) => Favorites()
           );
+        case "/navigation" :
+          return MaterialPageRoute(
+              builder: (_) => Navigation()
+          );
         default :
           _erroRota();
       }

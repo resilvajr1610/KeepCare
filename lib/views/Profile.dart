@@ -1,7 +1,4 @@
-import 'dart:async';
-import 'package:flutter/material.dart';
 import '../Model/export.dart';
-import 'package:cloud_firestore/cloud_firestore.dart';
 
 class Profile extends StatefulWidget {
   const Profile({Key? key}) : super(key: key);
@@ -12,74 +9,21 @@ class Profile extends StatefulWidget {
 
 class _ProfileState extends State<Profile> {
 
-  final _controllerGender = StreamController<QuerySnapshot>.broadcast();
   TextEditingController _controllerName = TextEditingController();
   TextEditingController _controllerLastName = TextEditingController();
   TextEditingController _controllerDate = TextEditingController();
   TextEditingController _controllerCity = TextEditingController();
-  var _selectedGender;
+  final _itemsGender = ['Cisgênero','Transgênero','Não-binário'];
+  String? _selectedGender;
 
-  Widget stream(final controller) {
-    return StreamBuilder<QuerySnapshot>(
-      stream:controller.stream,
-      builder: (context,snapshot){
-
-        switch (snapshot.connectionState) {
-          case ConnectionState.none:
-          case ConnectionState.waiting:
-            return Container();
-            break;
-          case ConnectionState.active:
-          case ConnectionState.done:
-
-            if(snapshot.hasError)
-              return Text("Erro ao carregar dados!");
-
-            if(!snapshot.hasData){
-              return Container();
-            }else {
-              List<DropdownMenuItem> espItems = [];
-              for (int i = 0; i < snapshot.data!.docs.length;i++){
-                DocumentSnapshot snap=snapshot.data!.docs[i];
-                espItems.add(
-                    DropdownMenuItem(
-                      child: Text(
-                        snap.id,
-                        textAlign: TextAlign.center,
-                        style: TextStyle(color: PaletteColor.grey),
-                      ),
-                      value: "${snap.id}",
-                    )
-                );
-              }
-              return Row(
-                mainAxisAlignment: MainAxisAlignment.center,
-                children: [
-                  DropdownButton<dynamic>(
-                    items:espItems,
-                    onChanged:(value){
-                      setState(() {
-                        _selectedGender = value.toString();
-                      });
-                    },
-                    value: _selectedGender,
-                    isExpanded: false,
-                    hint: new Text(
-                      "Selecione",
-                      style: TextStyle(color: PaletteColor.grey ),
-                    ),
-                  ),
-                ],
-              );
-            }
-
-        }
-      },
-    );
-  }
+  DropdownMenuItem<String>  buildMenuItem(String item)=>DropdownMenuItem(
+    value: item,
+    child: Text(item),
+  );
 
   @override
   Widget build(BuildContext context) {
+
     double width = MediaQuery.of(context).size.width;
     double height = MediaQuery.of(context).size.height;
     return Scaffold(
@@ -164,12 +108,27 @@ class _ProfileState extends State<Profile> {
                                 ),
                               ),
                             ),
-                            DropdownItens(
-                                streamBuilder: stream(_controllerGender),
-                                onChanged: (){},
-                                selected: "",
-                                width: width*0.35
-                            )
+                            Container(
+                              height: height*0.07,
+                              width: width*0.35,
+                              decoration: BoxDecoration(
+                                color: PaletteColor.white,
+                                borderRadius: BorderRadius.circular(5),
+                              ),
+                              child: DropdownButtonHideUnderline(
+                                child: DropdownButton(
+                                  alignment: Alignment.center,
+                                  value: _selectedGender,
+                                  hint: Text("Gênero",style: TextStyle(fontSize: 12)),
+                                  style: TextStyle(
+                                      color: Colors.black,
+                                      fontSize: 12
+                                  ),
+                                  items: _itemsGender.map(buildMenuItem).toList(),
+                                  onChanged: (value) => setState(() => _selectedGender = value.toString()),
+                                ),
+                              ),
+                            ),
                           ],
                         ),
                         Column(
@@ -226,7 +185,9 @@ class _ProfileState extends State<Profile> {
                       text: "Salvar",
                       icons: Icons.facebook,
                       size: 0,
-                      color: PaletteColor.primiryColor,
+                      colorButton: PaletteColor.primiryColor,
+                      colorText: PaletteColor.white,
+                      colorIcon: PaletteColor.white,
                     ),
                   ),
                 ]),

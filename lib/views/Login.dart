@@ -1,7 +1,7 @@
-import 'package:flutter/cupertino.dart';
-import 'package:flutter/material.dart';
-import 'package:flutter/services.dart';
+import 'dart:convert';
+
 import '../Model/export.dart';
+import 'package:http/http.dart' as http;
 
 class Login extends StatefulWidget {
   const Login({Key? key}) : super(key: key);
@@ -15,6 +15,42 @@ class _LoginState extends State<Login> {
   TextEditingController _controllerEmail = TextEditingController();
   TextEditingController _controllerPassword = TextEditingController();
   bool check = false;
+
+  void _signInFacebook()async{
+    try {
+      final LoginResult result = await FacebookAuth.instance.login(permissions: (['email', 'public_profile']));
+      final token = result.accessToken!.token;
+      print('Facebook token userID : ${result.accessToken!.grantedPermissions}');
+      final graphResponse = await http.get(Uri.parse( 'https://graph.facebook.com/'
+          'v2.12/me?fields=name,first_name,last_name,email&access_token=${token}'));
+
+      final profile = jsonDecode(graphResponse.body);
+      print("Profile is equal to $profile");
+      try {
+        final AuthCredential facebookCredential = FacebookAuthProvider.credential(result.accessToken!.token);
+        final userCredential = await FirebaseAuth.instance.signInWithCredential(facebookCredential);
+        Navigator.pushReplacementNamed(context, "/navigation");
+      }catch(e)
+      {
+        final snackBar = SnackBar(
+          margin: const EdgeInsets.all(20),
+          behavior: SnackBarBehavior.floating,
+          content:  Text(e.toString()),
+          backgroundColor: (Colors.redAccent),
+          action: SnackBarAction(
+            label: 'dismiss',
+            onPressed: () {
+            },
+          ),
+        );
+        ScaffoldMessenger.of(context).showSnackBar(snackBar);
+      }
+
+    } catch (e) {
+      print("error occurred");
+      print(e.toString());
+    }
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -36,15 +72,28 @@ class _LoginState extends State<Login> {
                 child:Image.asset("assets/logoColor.png"),
               ),
               Buttons(
-                  onPressed: (){},
+                  onPressed: _signInFacebook,
                   text: 'Entrar com Facebook',
                   icons: Icons.facebook,
                   size: 20,
-                  color: PaletteColor.blueFacebook,
+                  colorButton: PaletteColor.blueFacebook,
+                  colorIcon: PaletteColor.white,
+                  colorText: PaletteColor.white,
               ),
               Padding(
                 padding: const EdgeInsets.all(8.0),
-                child: GoogleButton(),
+                child: Buttons(
+                  onPressed: (){
+                    final provider = Provider.of<GoogleSignInProvider>(context,listen:false);
+                    provider.googleLogin().then((_) => Navigator.pushReplacementNamed(context, "/navigation"));
+                  },
+                  text: 'Entrar com Google',
+                  icons: FontAwesomeIcons.google,
+                  size: 18,
+                  colorButton: PaletteColor.white,
+                  colorText: PaletteColor.grey,
+                  colorIcon: Colors.red,
+                ),
               ),
               Padding(
                 padding: const EdgeInsets.all(10),
@@ -102,11 +151,13 @@ class _LoginState extends State<Login> {
               Padding(
                 padding: const EdgeInsets.all(8.0),
                 child: Buttons(
-                  onPressed: ()=>Navigator.pushNamed(context, "/profile"),//Navigator.pushNamed(context, '/login'),
+                  onPressed: ()=>Navigator.pushNamed(context, "/navigation"),
                   text: "Criar conta",
                   icons: Icons.facebook,
                   size: 0,
-                  color: PaletteColor.primiryColor,
+                  colorButton: PaletteColor.primiryColor,
+                  colorIcon: PaletteColor.white,
+                  colorText: PaletteColor.white,
                 ),
               ),
             ],

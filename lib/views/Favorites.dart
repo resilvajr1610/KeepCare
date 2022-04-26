@@ -1,4 +1,6 @@
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:smooth_star_rating_nsafe/smooth_star_rating.dart';
 import '../Model/export.dart';
 
 class Favorites extends StatefulWidget {
@@ -38,6 +40,7 @@ class _FavoritesState extends State<Favorites> {
                     padding: EdgeInsets.all(8),
                     color: PaletteColor.greyLight,
                     child: Row(
+                      crossAxisAlignment: CrossAxisAlignment.start,
                       children: [
                         CircleAvatar(
                           radius: 35,
@@ -54,9 +57,17 @@ class _FavoritesState extends State<Favorites> {
                               Text("this.title",
                                 style: TextStyle(fontFamily: 'Nunito',color: PaletteColor.grey,fontSize: 16,),
                               ),
+                              SmoothStarRating(
+                                rating: 4,
+                                color: Colors.yellow,
+                                borderColor: Colors.yellow,
+                                size: 20,
+                              )
                             ],
                           ),
                         ),
+                        Spacer(),
+                        Icon(Icons.favorite,color: PaletteColor.primiryColor,)
                       ],
                     ),
                   ),
