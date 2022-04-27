@@ -91,7 +91,7 @@ class _ProfileState extends State<Profile> {
             InkWell(
               onTap: (){
                 final provider = Provider.of<GoogleSignInProvider>(context,listen:false);
-                provider.googleLogout().then((_) => Navigator.pushReplacementNamed(context, "/auth"));
+                provider.googleLogout().then((_) => Navigator.pushReplacementNamed(context, "/home"));
               },
               child: Padding(
                 padding: const EdgeInsets.all(8.0),

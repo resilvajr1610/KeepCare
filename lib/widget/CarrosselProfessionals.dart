@@ -6,11 +6,13 @@ class CarrosselProfessionals extends StatelessWidget {
 
   final String name;
   final String title;
+  final String photo;
   final dynamic onTap;
 
   CarrosselProfessionals({
     required this.name,
     required this.title,
+    required this.photo,
     required this.onTap,
   });
 
@@ -35,6 +37,7 @@ class CarrosselProfessionals extends StatelessWidget {
               Padding(
                 padding: const EdgeInsets.all(4.0),
                 child: CircleAvatar(
+                  backgroundImage: AssetImage(this.photo),
                   backgroundColor: PaletteColor.greyMedium,
                   radius: 25,
                 ),

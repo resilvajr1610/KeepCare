@@ -16,11 +16,13 @@ export '../Model/colors.dart';
 export '../Model/RouteGenerator.dart';
 export '../Model/SnackBarModel.dart';
 export '../Model/UserDetails.dart';
+export '../Model/Users.dart';
 
 export '../widget/Buttons.dart';
 export '../widget/inputRegister.dart';
 export '../widget/ListProfessionals.dart';
 export '../widget/WidgetFavorites.dart';
+export '../widget/CarrosselProfessionals.dart';
 
 export '../provider/google_sign_in.dart';
 export '../provider/signFacebook.dart';

@@ -1,16 +1,23 @@
-import 'package:flutter/cupertino.dart';
-import 'package:flutter/material.dart';
-import 'package:smooth_star_rating_nsafe/smooth_star_rating.dart';
 import '../Model/export.dart';
 
 class Favorites extends StatefulWidget {
-  const Favorites({Key? key}) : super(key: key);
+  Users users;
+  Favorites(this.users);
 
   @override
   _FavoritesState createState() => _FavoritesState();
 }
 
 class _FavoritesState extends State<Favorites> {
+
+  Users? _users;
+
+  @override
+  void initState() {
+    super.initState();
+    _users = widget.users;
+  }
+
   @override
   Widget build(BuildContext context) {
 
@@ -45,16 +52,17 @@ class _FavoritesState extends State<Favorites> {
                         CircleAvatar(
                           radius: 35,
                           backgroundColor: PaletteColor.greyMedium,
+                          backgroundImage: AssetImage(_users!.photo),
                         ),
                         Padding(
                           padding: const EdgeInsets.all(8.0),
                           child: Column(
                             crossAxisAlignment: CrossAxisAlignment.start,
                             children: [
-                              Text("this.name",
+                              Text(_users!.name,
                                 style: TextStyle(fontFamily: 'Nunito',color: PaletteColor.grey,fontSize: 20,fontWeight: FontWeight.bold),
                               ),
-                              Text("this.title",
+                              Text(_users!.title,
                                 style: TextStyle(fontFamily: 'Nunito',color: PaletteColor.grey,fontSize: 16,),
                               ),
                               SmoothStarRating(

@@ -32,7 +32,7 @@ class RouteGenerator{
           );
         case "/favorites" :
           return MaterialPageRoute(
-              builder: (_) => Favorites()
+              builder: (_) => Favorites(args as Users)
           );
         case "/navigation" :
           return MaterialPageRoute(
