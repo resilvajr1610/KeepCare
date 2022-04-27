@@ -13,24 +13,62 @@ class _ProfileState extends State<Profile> {
   TextEditingController _controllerLastName = TextEditingController();
   TextEditingController _controllerDate = TextEditingController();
   TextEditingController _controllerCity = TextEditingController();
+  FirebaseFirestore db = FirebaseFirestore.instance;
   final _itemsGender = ['Cisgênero','Transgênero','Não-binário'];
   String? _selectedGender;
   UserDetails? userDetails;
+  final _scaffoldKey = GlobalKey<ScaffoldState>();
+  bool _updating = false;
 
   DropdownMenuItem<String>  buildMenuItem(String item)=>DropdownMenuItem(
     value: item,
     child: Text(item),
   );
 
+  _updateUsers(){
+
+    if(_controllerName.text.isNotEmpty && _controllerLastName.text.isNotEmpty && _controllerCity.text.isNotEmpty && _controllerDate.text.isNotEmpty) {
+      db.collection("users").doc(FirebaseAuth.instance.currentUser!.uid)
+          .set({
+        "gender": _selectedGender,
+        "date": _controllerDate.text,
+        "city": _controllerCity.text
+      })
+          .then((value) {
+        User? user = FirebaseAuth.instance.currentUser;
+        user?.updateDisplayName(
+            _controllerName.text + " " + _controllerLastName.text);
+        setState(() {
+          _updating=false;
+        });
+      });
+    }
+  }
+
+  _loadingData()async{
+    userDetails = UserDetails();
+    setState(() {
+      _controllerName = TextEditingController(text: FirebaseAuth.instance.currentUser!=null? FirebaseAuth.instance.currentUser!.displayName?.split(" ").first:"");
+      _controllerLastName = TextEditingController(text: FirebaseAuth.instance.currentUser!=null? FirebaseAuth.instance.currentUser!.displayName?.split(" ").last:"");
+    });
+
+    DocumentSnapshot snapshot = await db.collection("users")
+        .doc(FirebaseAuth.instance.currentUser!.uid)
+        .get();
+
+    Map<String,dynamic>? data = snapshot.data() as Map<String, dynamic>?;
+    setState(() {
+      _selectedGender = data?["gender"]??"";
+      _controllerDate = TextEditingController(text: data?["date"]??"");
+      _controllerCity = TextEditingController(text: data?["city"]??"");
+
+    });
+  }
+
   @override
   void initState() {
     super.initState();
-    userDetails = UserDetails();
-    setState(() {
-      print("name : ${FirebaseAuth.instance.currentUser!.displayName}");
-      _controllerName = TextEditingController(text: FirebaseAuth.instance.currentUser!.displayName!.split(" ").first);
-      _controllerLastName = TextEditingController(text: FirebaseAuth.instance.currentUser!.displayName!.split(" ").last);
-    });
+    _loadingData();
   }
 
   @override
@@ -39,6 +77,7 @@ class _ProfileState extends State<Profile> {
     double width = MediaQuery.of(context).size.width;
     double height = MediaQuery.of(context).size.height;
     return Scaffold(
+        key: _scaffoldKey,
         appBar: AppBar(
           centerTitle: true,
           backgroundColor: PaletteColor.primiryColor,
@@ -52,7 +91,7 @@ class _ProfileState extends State<Profile> {
             InkWell(
               onTap: (){
                 final provider = Provider.of<GoogleSignInProvider>(context,listen:false);
-                provider.googleLogout().then((_) => Navigator.pushReplacementNamed(context, "/login"));
+                provider.googleLogout().then((_) => Navigator.pushReplacementNamed(context, "/auth"));
               },
               child: Padding(
                 padding: const EdgeInsets.all(8.0),
@@ -62,7 +101,20 @@ class _ProfileState extends State<Profile> {
           ],
         ),
         backgroundColor: PaletteColor.scaffold,
-        body:Center(
+        body:_updating?Center(
+          child: Column(
+            crossAxisAlignment: CrossAxisAlignment.center,
+            mainAxisAlignment: MainAxisAlignment.center,
+            mainAxisSize: MainAxisSize.min,
+            children: [
+              Padding(
+                padding: const EdgeInsets.all(8.0),
+                child: Text('Enviando...',style: TextStyle(color: PaletteColor.primiryColor),),
+              ),
+              CircularProgressIndicator(color: PaletteColor.primiryColor,),
+            ],
+          ),
+        ):Center(
           child:SingleChildScrollView(
             child: Column(
               mainAxisAlignment: MainAxisAlignment.center,
@@ -173,6 +225,10 @@ class _ProfileState extends State<Profile> {
                               hint: '00/00/0000',
                               fonts: 14,
                               keyboardType: TextInputType.number,
+                              inputFormatters: [
+                                FilteringTextInputFormatter.digitsOnly,
+                                DataInputFormatter()
+                              ],
                             ),
                           ],
                         ),
@@ -205,8 +261,20 @@ class _ProfileState extends State<Profile> {
                   Padding(
                     padding: const EdgeInsets.all(8.0),
                     child: Buttons(
-                      onPressed: ()=> Navigator.pushNamed(context, "/search"),
-                      text: "Salvar",
+                      onPressed: (){
+                         if(_controllerName.text.isNotEmpty
+                            && _controllerLastName.text.isNotEmpty
+                            && _controllerCity.text.isNotEmpty
+                            && _controllerDate.text.isNotEmpty) {
+                           setState(() {
+                             _updating=true;
+                           });
+                           _updateUsers();
+                         }else{
+                           showSnackBar(context, 'Preencha todos os campos corretamente',_scaffoldKey);
+                         }
+                      },
+                      text: "Atualizar",
                       icons: Icons.facebook,
                       size: 0,
                       colorButton: PaletteColor.primiryColor,

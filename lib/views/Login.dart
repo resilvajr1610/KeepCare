@@ -9,9 +9,67 @@ class Login extends StatefulWidget {
 
 class _LoginState extends State<Login> {
 
+  TextEditingController _controllerName = TextEditingController();
   TextEditingController _controllerEmail = TextEditingController();
   TextEditingController _controllerPassword = TextEditingController();
+  FirebaseAuth _auth = FirebaseAuth.instance;
+  final _scaffoldKey = GlobalKey<ScaffoldState>();
   bool check = false;
+  String _error="";
+
+  _saveFirebase()async{
+
+    if(_controllerName.text.isNotEmpty&&_controllerName.text.contains(" ")){
+      if (_controllerEmail.text.isNotEmpty) {
+        setState(() {
+          _error = "";
+        });
+
+        try{
+          await _auth.createUserWithEmailAndPassword(
+              email: _controllerEmail.text,
+              password: _controllerPassword.text
+          ).then((auth)async{
+
+            User? user = FirebaseAuth.instance.currentUser;
+            user?.updateDisplayName(_controllerName.text);
+
+            Navigator.pushReplacementNamed(context, "/navigation");
+          });
+        }on FirebaseAuthException catch (e) {
+          if(e.code =="weak-password"){
+            setState(() {
+              _error = "Digite uma senha mais forte!";
+            });
+          }else if(e.code =="unknown"){
+            setState(() {
+              _error = "A senha está vazia!";
+            });
+          }else if(e.code =="invalid-email"){
+            setState(() {
+              _error = "Digite um e-mail válido!";
+            });
+          }else if(e.code =="email-already-in-use"){
+            setState(() {
+              _error = "Esse e-mail já está cadastrado!";
+            });
+          }else{
+            setState(() {
+              _error = e.code;
+            });
+          }
+        }
+      } else {
+        setState(() {
+          _error = "Preencha seu email";
+        });
+      }
+    }else{
+      setState(() {
+        _error = "Preencha seu nome e Sobrenome";
+      });
+    }
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -19,6 +77,7 @@ class _LoginState extends State<Login> {
     double width = MediaQuery.of(context).size.width;
 
     return Scaffold(
+      key: _scaffoldKey,
       backgroundColor: PaletteColor.scaffold,
       body: Center(
         child: SingleChildScrollView(
@@ -33,7 +92,7 @@ class _LoginState extends State<Login> {
                 child:Image.asset("assets/logoColor.png"),
               ),
               Buttons(
-                  onPressed:()=>signInFacebook(context),
+                  onPressed:()=>check?signInFacebook(context):showSnackBar(context, 'Leia e concorde com os termos e condições de uso para avançar',_scaffoldKey),
                   text: 'Entrar com Facebook',
                   icons: Icons.facebook,
                   size: 20,
@@ -46,7 +105,8 @@ class _LoginState extends State<Login> {
                 child: Buttons(
                   onPressed: (){
                     final provider = Provider.of<GoogleSignInProvider>(context,listen:false);
-                    provider.googleLogin().then((_) => Navigator.pushReplacementNamed(context, "/navigation"));
+                    check?provider.googleLogin().then((_) => Navigator.pushReplacementNamed(context, "/navigation"))
+                        :showSnackBar(context, 'Leia e concorde com os termos e condições de uso para avançar',_scaffoldKey);
                   },
                   text: 'Entrar com Google',
                   icons: FontAwesomeIcons.google,
@@ -61,6 +121,14 @@ class _LoginState extends State<Login> {
                 child: Text('ou',
                   style: TextStyle(fontFamily: 'Nunito',color: PaletteColor.primiryColor,fontSize: 20),
                 ),
+              ),
+              InputRegister(
+                width: width*0.8,
+                obscure: false,
+                controller: _controllerName,
+                hint: 'Informe seu nome e Sobrenome',
+                fonts: 14,
+                keyboardType: TextInputType.text,
               ),
               InputRegister(
                   width: width*0.8,
@@ -112,7 +180,8 @@ class _LoginState extends State<Login> {
               Padding(
                 padding: const EdgeInsets.all(8.0),
                 child: Buttons(
-                  onPressed: ()=>Navigator.pushNamed(context, "/navigation"),
+                  onPressed: ()=>check?_saveFirebase()
+                      :showSnackBar(context, 'Leia e concorde com os termos e condições de uso para avançar',_scaffoldKey),
                   text: "Criar conta",
                   icons: Icons.facebook,
                   size: 0,
@@ -121,6 +190,7 @@ class _LoginState extends State<Login> {
                   colorText: PaletteColor.white,
                 ),
               ),
+              Text(_error,style: TextStyle(color: Colors.red),)
             ],
           ),
         ),

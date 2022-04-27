@@ -38,6 +38,10 @@ class RouteGenerator{
           return MaterialPageRoute(
               builder: (_) => Navigation()
           );
+        case "/auth" :
+          return MaterialPageRoute(
+              builder: (_) => Auth()
+          );
         default :
           _erroRota();
       }

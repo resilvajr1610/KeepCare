@@ -55,7 +55,7 @@ class _HomeState extends State<Home> {
                     ),
                   ),
                   InkWell(
-                    onTap: ()=>Navigator.pushNamed(context, "/login"),
+                    onTap: ()=>Navigator.pushNamed(context, "/auth"),
                     child: Padding(
                       padding: const EdgeInsets.symmetric(vertical: 8.0),
                       child: Text('Entrar',

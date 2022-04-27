@@ -23,6 +23,7 @@ dependencies:
   font_awesome_flutter: ^9.0.0
   flutter_facebook_auth: ^3.5.0
   http: ^0.13.4
+  brasil_fields: ^1.4.2
 
 dev_dependencies:
   flutter_test:

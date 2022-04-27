@@ -8,6 +8,7 @@ class InputRegister extends StatelessWidget {
   final TextInputType keyboardType;
   final bool obscure;
   final double width;
+  List<TextInputFormatter>? inputFormatters=[];
 
   InputRegister({
     required this.controller,
@@ -15,7 +16,8 @@ class InputRegister extends StatelessWidget {
     required this.fonts,
     required this.keyboardType,
     required this.obscure,
-    required this.width
+    required this.width,
+    this.inputFormatters
 });
 
   @override
@@ -44,6 +46,7 @@ class InputRegister extends StatelessWidget {
           color: PaletteColor.primirySecundary,
           fontSize: this.fonts,
         ),
+        inputFormatters:this.inputFormatters,
         decoration: InputDecoration(
             border: InputBorder.none,
             hintText: this.hint,
