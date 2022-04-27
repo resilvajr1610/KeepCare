@@ -21,6 +21,7 @@ export '../widget/ListProfessionals.dart';
 export '../widget/WidgetFavorites.dart';
 
 export '../provider/google_sign_in.dart';
+export '../provider/signFacebook.dart';
 
 export 'dart:convert';
 export 'package:google_sign_in/google_sign_in.dart';
