@@ -13,6 +13,7 @@ export '../views/Navigation.dart';
 
 export '../Model/colors.dart';
 export '../Model/RouteGenerator.dart';
+export '../Model/UserDetails.dart';
 
 export '../widget/Buttons.dart';
 export '../widget/inputRegister.dart';
@@ -21,6 +22,7 @@ export '../widget/WidgetFavorites.dart';
 
 export '../provider/google_sign_in.dart';
 
+export 'dart:convert';
 export 'package:google_sign_in/google_sign_in.dart';
 export 'package:firebase_auth/firebase_auth.dart';
 export 'package:cloud_firestore/cloud_firestore.dart';

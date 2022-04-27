@@ -1,5 +1,3 @@
-import 'package:flutter/material.dart';
-import 'package:flutter/services.dart';
 import '../Model/export.dart';
 
 class InputRegister extends StatelessWidget {
@@ -42,6 +40,10 @@ class InputRegister extends StatelessWidget {
         textAlign: TextAlign.start,
         keyboardType: this.keyboardType,
         textAlignVertical: TextAlignVertical.bottom,
+        style: TextStyle(
+          color: PaletteColor.primirySecundary,
+          fontSize: this.fonts,
+        ),
         decoration: InputDecoration(
             border: InputBorder.none,
             hintText: this.hint,

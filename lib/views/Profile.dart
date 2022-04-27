@@ -15,11 +15,23 @@ class _ProfileState extends State<Profile> {
   TextEditingController _controllerCity = TextEditingController();
   final _itemsGender = ['Cisgênero','Transgênero','Não-binário'];
   String? _selectedGender;
+  UserDetails? userDetails;
 
   DropdownMenuItem<String>  buildMenuItem(String item)=>DropdownMenuItem(
     value: item,
     child: Text(item),
   );
+
+  @override
+  void initState() {
+    super.initState();
+    userDetails = UserDetails();
+    setState(() {
+      print("name : ${FirebaseAuth.instance.currentUser!.displayName}");
+      _controllerName = TextEditingController(text: FirebaseAuth.instance.currentUser!.displayName!.split(" ").first);
+      _controllerLastName = TextEditingController(text: FirebaseAuth.instance.currentUser!.displayName!.split(" ").last);
+    });
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -36,6 +48,18 @@ class _ProfileState extends State<Profile> {
               fontSize: 24,
               fontWeight: FontWeight.bold
           ),
+          actions: [
+            InkWell(
+              onTap: (){
+                final provider = Provider.of<GoogleSignInProvider>(context,listen:false);
+                provider.googleLogout().then((_) => Navigator.pushReplacementNamed(context, "/login"));
+              },
+              child: Padding(
+                padding: const EdgeInsets.all(8.0),
+                child: Icon(Icons.logout),
+              ),
+            )
+          ],
         ),
         backgroundColor: PaletteColor.scaffold,
         body:Center(
@@ -62,7 +86,7 @@ class _ProfileState extends State<Profile> {
                     width: width*0.8,
                     obscure: false,
                     controller: _controllerName,
-                    hint: 'Nome',
+                    hint: "Nome",
                     fonts: 14,
                     keyboardType: TextInputType.text,
                   ),
@@ -84,7 +108,7 @@ class _ProfileState extends State<Profile> {
                     width: width*0.8,
                     obscure: false,
                     controller: _controllerLastName,
-                    hint: 'Sobrenome',
+                    hint: "Sobrenome",
                     fonts: 14,
                     keyboardType: TextInputType.text,
                   ),
