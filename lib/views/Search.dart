@@ -1,4 +1,4 @@
-import '../Model/export.dart';
+import '../Utils/export.dart';
 
 class Search extends StatefulWidget {
   const Search({Key? key}) : super(key: key);
@@ -98,6 +98,18 @@ class _SearchState extends State<Search> {
                     child: Buttons(
                       onPressed: ()=>Navigator.pushNamed(context, "/professionals"),
                       text: "Pesquisar",
+                      icons: Icons.facebook,
+                      size: 0,
+                      colorButton: PaletteColor.primiryColor,
+                      colorIcon: PaletteColor.white,
+                      colorText: PaletteColor.white,
+                    ),
+                  ),
+                  Padding(
+                    padding: const EdgeInsets.symmetric(horizontal: 8.0,vertical: 16),
+                    child: Buttons(
+                      onPressed: ()=>Navigator.pushNamed(context, "/professionals"),
+                      text: "Todos profissionais",
                       icons: Icons.facebook,
                       size: 0,
                       colorButton: PaletteColor.primiryColor,

@@ -1,4 +1,4 @@
-import '../Model/export.dart';
+import '../Utils/export.dart';
 
 class MapProfissionals extends StatefulWidget {
   @override
@@ -12,7 +12,7 @@ class _MapProfissionalsState extends State<MapProfissionals> {
   @override
   void initState() {
     super.initState();
-    _users = Users();
+    _users;
   }
 
   @override

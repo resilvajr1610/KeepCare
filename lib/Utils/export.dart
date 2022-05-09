@@ -11,12 +11,14 @@ export '../views/MapProfissionals.dart';
 export '../views/Favorites.dart';
 export '../views/Navigation.dart';
 export '../views/Auth.dart';
+export '../widget/DetailsProfessionals.dart';
 
-export '../Model/colors.dart';
-export '../Model/RouteGenerator.dart';
-export '../Model/SnackBarModel.dart';
+export 'colors.dart';
+export 'RouteGenerator.dart';
+export '../widget/SnackBarModel.dart';
 export '../Model/UserDetails.dart';
 export '../Model/Users.dart';
+export '../Model/Data.dart';
 
 export '../widget/Buttons.dart';
 export '../widget/inputRegister.dart';

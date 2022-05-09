@@ -1,4 +1,4 @@
-import '../Model/export.dart';
+import '../Utils/export.dart';
 
 class Auth extends StatefulWidget {
   const Auth({Key? key}) : super(key: key);

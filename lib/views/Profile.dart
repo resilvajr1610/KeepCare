@@ -1,4 +1,4 @@
-import '../Model/export.dart';
+import '../Utils/export.dart';
 
 class Profile extends StatefulWidget {
   const Profile({Key? key}) : super(key: key);

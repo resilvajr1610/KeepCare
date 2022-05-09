@@ -1,4 +1,3 @@
-import 'package:flutter/material.dart';
 import 'export.dart';
 
 class RouteGenerator{
@@ -26,13 +25,17 @@ class RouteGenerator{
           return MaterialPageRoute(
               builder: (_) => Professionals()
           );
+        case "/detailsProfessionals" :
+          return MaterialPageRoute(
+              builder: (_) => DetailsProfessionals(args as int)
+          );
         case "/map" :
           return MaterialPageRoute(
               builder: (_) => MapProfissionals()
           );
         case "/favorites" :
           return MaterialPageRoute(
-              builder: (_) => Favorites(args as Users)
+              builder: (_) => Favorites()
           );
         case "/navigation" :
           return MaterialPageRoute(

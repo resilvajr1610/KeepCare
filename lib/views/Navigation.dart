@@ -1,4 +1,4 @@
-import 'package:keepcare/Model/export.dart';
+import 'package:keepcare/Utils/export.dart';
 
 class Navigation extends StatefulWidget {
   const Navigation({Key? key}) : super(key: key);
@@ -9,21 +9,14 @@ class Navigation extends StatefulWidget {
 
 class _NavigationState extends State<Navigation> {
 
-  Users? _users;
   int _currentIndex = 0;
-
-  @override
-  void initState() {
-    super.initState();
-    _users = Users();
-  }
 
   @override
   Widget build(BuildContext context) {
 
     List<Widget> views = [
       Search(),
-      Favorites(_users!),
+      Favorites(),
       Profile(),
     ];
     return Scaffold(

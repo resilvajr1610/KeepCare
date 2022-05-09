@@ -1,4 +1,4 @@
-import '../Model/export.dart';
+import '../Utils/export.dart';
 
 class Home extends StatefulWidget {
   const Home({Key? key}) : super(key: key);

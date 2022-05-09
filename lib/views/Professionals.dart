@@ -1,4 +1,4 @@
-import '../Model/export.dart';
+import '../Utils/export.dart';
 
 class Professionals extends StatefulWidget {
   const Professionals({Key? key}) : super(key: key);
@@ -15,6 +15,7 @@ class _ProfessionalsState extends State<Professionals> {
   Color? _colorAddress;
   Color? _colorPhone;
   Color? colorOpinion;
+  Users? users;
 
   @override
   Widget build(BuildContext context) {
@@ -42,13 +43,6 @@ class _ProfessionalsState extends State<Professionals> {
           child: Column(
             children: [
               ListProfessional(
-                name: 'Fulano 1',
-                title: 'Título 1',
-                photo: "assets/imageProfile1.png",
-                address: "2972 Westheimer Rd. Santa Ana, Illinois 85486 ",
-                fone: "(303) 555-0105",
-                opinion: "Maria Nunes: Nulla Lorem mollit cupidatat irure. Laborum magna nulla duis ullamco cillum dolor. ",
-                rating: 5,
                 showAddress: _showAdrress,
                 colorAddress: _colorAddress??PaletteColor.white,
                 onPressedAddress: (){

@@ -1,47 +1,32 @@
 class Users{
 
-  String _id = "";
-  String _email = "";
-  String _name = "";
-  String _title = "";
-  String _rating = "";
-  String _photo = "";
+  int id = 0;
+  String email = "";
+  String name = "";
+  String title = "";
+  int rating = 0;
+  String photo = "";
+  String address = "";
+  String phone = "";
+  String subtitle = "";
+  String condicions = "";
+  String formations = "";
+  String languages = "";
+  String opinions = "";
 
-  Users();
-
-  String get photo => _photo;
-
-  set photo(String value) {
-    _photo = value;
-  }
-
-  String get rating => _rating;
-
-  set rating(String value) {
-    _rating = value;
-  }
-
-  String get title => _title;
-
-  set title(String value) {
-    _title = value;
-  }
-
-  String get name => _name;
-
-  set name(String value) {
-    _name = value;
-  }
-
-  String get email => _email;
-
-  set email(String value) {
-    _email = value;
-  }
-
-  String get id => _id;
-
-  set id(String value) {
-    _id = value;
-  }
+  Users({
+    required this.id,
+    required this.email,
+    required this.name,
+    required this.title,
+    required this.rating,
+    required this.photo,
+    required this.address,
+    required this.phone,
+    required this.subtitle,
+    required this.condicions,
+    required this.formations,
+    required this.languages,
+    required this.opinions,
+});
 }

@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import '../Model/export.dart';
+import '../Utils/export.dart';
 
 class WidgetFavorites extends StatelessWidget {
 

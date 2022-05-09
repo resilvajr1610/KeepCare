@@ -1,6 +1,6 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import '../Model/export.dart';
+import '../Utils/export.dart';
 
 class CarrosselProfessionals extends StatelessWidget {
 
