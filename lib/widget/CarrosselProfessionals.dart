@@ -48,8 +48,12 @@ class CarrosselProfessionals extends StatelessWidget {
                   crossAxisAlignment: CrossAxisAlignment.start,
                   mainAxisAlignment: MainAxisAlignment.center,
                   children: [
-                    Text(this.name,
-                      style: TextStyle(fontFamily: 'Nunito',color: PaletteColor.grey,fontSize: 12,fontWeight: FontWeight.bold),
+                    Container(
+                      width: 90,
+                      child: Text(this.name,
+                        overflow: TextOverflow.clip,
+                        style: TextStyle(fontFamily: 'Nunito',color: PaletteColor.grey,fontSize: 12,fontWeight: FontWeight.bold),
+                      ),
                     ),
                     Text(this.title,
                       style: TextStyle(fontFamily: 'Nunito',color: PaletteColor.grey,fontSize: 10,),

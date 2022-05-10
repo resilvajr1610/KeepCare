@@ -1,6 +1,8 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.keepcare.keepcare">
 
+    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
+    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
     <uses-permission android:name="android.permission.INTERNET" />
 
    <application
@@ -35,5 +37,6 @@
             android:value="2" />
        <meta-data android:name="com.facebook.sdk.ApplicationId" android:value="@string/facebook_app_id"/>
        <meta-data android:name="com.facebook.sdk.ClientToken" android:value="@string/facebook_client_token"/>
+       <meta-data android:name="com.google.android.geo.API_KEY" android:value="AIzaSyBUI_Om9usiaKlqmb4WHyptqOiEwjbYT24"/>
     </application>
 </manifest>

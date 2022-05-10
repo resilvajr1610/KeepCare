@@ -87,6 +87,7 @@ class _SearchState extends State<Search> {
                         rating: _rating,
                         onRatingChanged: (valor){
                           setState(() {
+                            _rating = valor;
                           });
                         },
                       ),

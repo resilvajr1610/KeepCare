@@ -18,7 +18,9 @@ List<Users> usersList = [
                   'Transtornos Da Alimentação\nDeficiências Nutricionais\nDiabetes Tipo 2\nDesnutrição\nCaquexia\nSeletividade alimentar\n'
                   'Hipersensibilidade Alimentar\nHipersensibilidade Alimentar\n',
       opinions: 'Sem onipiões',
-      photo: 'assets/logoColor.png'
+      photo: 'assets/logoColor.png',
+      lat:-20.288904152357695,
+      lon:-40.29318978668333,
   ),
 
 Users(
@@ -34,7 +36,9 @@ Users(
       formations: '',
       condicions: '',
       opinions: 'Sem onipiões',
-      photo: 'assets/logoColor.png'
+      photo: 'assets/logoColor.png',
+      lat: -20.37216653128097,
+      lon: -40.37174180215326
   ),
   Users(
       id: 2,
@@ -50,7 +54,9 @@ Users(
       condicions: 'Obesidade\nEmagrecimento\nHipertrofia\nSarcopenia\nDores de cabeça\nDores da coluna vertebral\nDores crônicas\n'
                   'Musculoesqueléticas\nFibromialgia\nDistúrbios do sono',
       opinions: 'Sem opiniões',
-      photo: 'assets/logoColor.png'
+      photo: 'assets/logoColor.png',
+      lat: -20.34336301490321,
+      lon: -40.295859002153726
   ),
   Users(
       id: 3,
@@ -68,6 +74,8 @@ Users(
                   'Hipersensibilidade Alimentar\nTranstornos Da Alimentação\nEstado Pré-Diabético\nDiabetes Tipo 1\nDeficiências Nutricionais\n'
                   'Fígado Gorduroso Alcoólico\nCompulsão alimentar\nSobrepeso\nHipertrofia\nHipotiroidismo',
       opinions: 'Sem opiniões',
-      photo: 'assets/logoColor.png'
+      photo: 'assets/logoColor.png',
+      lat: -20.30788227605859,
+      lon: -40.29612781564906
   ),
 ];

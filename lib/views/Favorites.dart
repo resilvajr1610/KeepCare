@@ -2,7 +2,6 @@ import '../Utils/export.dart';
 
 class Favorites extends StatefulWidget {
 
-
   @override
   _FavoritesState createState() => _FavoritesState();
 }

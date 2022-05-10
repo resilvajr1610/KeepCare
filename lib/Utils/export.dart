@@ -39,3 +39,5 @@ export 'package:font_awesome_flutter/font_awesome_flutter.dart';
 export 'package:smooth_star_rating_nsafe/smooth_star_rating.dart';
 export 'package:flutter_facebook_auth/flutter_facebook_auth.dart';
 export 'package:brasil_fields/brasil_fields.dart';
+export 'package:google_maps_flutter/google_maps_flutter.dart';
+export 'package:geolocator/geolocator.dart';

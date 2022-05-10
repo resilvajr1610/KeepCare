@@ -13,6 +13,8 @@ class Users{
   String formations = "";
   String languages = "";
   String opinions = "";
+  double lat = 0;
+  double lon = 0;
 
   Users({
     required this.id,
@@ -28,5 +30,7 @@ class Users{
     required this.formations,
     required this.languages,
     required this.opinions,
+    required this.lat,
+    required this.lon,
 });
 }
