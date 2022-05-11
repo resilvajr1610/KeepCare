@@ -9,9 +9,9 @@ export '../views/Professionals.dart';
 export '../views/Search.dart';
 export '../views/MapProfissionals.dart';
 export '../views/Favorites.dart';
-export '../views/Navigation.dart';
 export '../views/Auth.dart';
 export '../widget/DetailsProfessionals.dart';
+export '../widget/MenuSheet.dart';
 
 export 'colors.dart';
 export 'RouteGenerator.dart';
@@ -41,3 +41,4 @@ export 'package:flutter_facebook_auth/flutter_facebook_auth.dart';
 export 'package:brasil_fields/brasil_fields.dart';
 export 'package:google_maps_flutter/google_maps_flutter.dart';
 export 'package:geolocator/geolocator.dart';
+export 'package:dio/dio.dart';

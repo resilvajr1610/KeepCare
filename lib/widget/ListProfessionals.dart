@@ -34,7 +34,6 @@ class ListProfessional extends StatelessWidget {
         separatorBuilder:(BuildContext context, int index)=> SizedBox(height: 5),
         itemBuilder: (BuildContext context, int index) {
           return Container(
-            height: 220,
             child: Card(
               child: Padding(
                 padding: const EdgeInsets.all(8.0),
@@ -55,8 +54,11 @@ class ListProfessional extends StatelessWidget {
                             child: Column(
                               crossAxisAlignment: CrossAxisAlignment.start,
                               children: [
-                                Text(usersList[index].name,
-                                  style: TextStyle(fontFamily: 'Nunito',color: PaletteColor.grey,fontSize: 20,fontWeight: FontWeight.bold),
+                                Container(
+                                  width: 110,
+                                  child: Text(usersList[index].name,
+                                    style: TextStyle(fontFamily: 'Nunito',color: PaletteColor.grey,fontSize: 16,fontWeight: FontWeight.bold),
+                                  ),
                                 ),
                                 Text(usersList[index].title,
                                   style: TextStyle(fontFamily: 'Nunito',color: PaletteColor.grey,fontSize: 16,),
@@ -112,7 +114,7 @@ class ListProfessional extends StatelessWidget {
                     Visibility(
                       visible: showAddress,
                       child: Container(
-                        height: MediaQuery.of(context).size.height*0.1,
+                        height: MediaQuery.of(context).size.height*0.2,
                         child: Center(child: Text(usersList[index].address)),
                       ),
                     ),

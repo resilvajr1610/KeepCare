@@ -22,8 +22,7 @@ List<Users> usersList = [
       lat:-20.288904152357695,
       lon:-40.29318978668333,
   ),
-
-Users(
+  Users(
       id: 1,
       name:'Vanuza Mildes',
       email: '',
@@ -78,4 +77,18 @@ Users(
       lat: -20.30788227605859,
       lon: -40.29612781564906
   ),
+];
+
+final itemsSubpecialty = [
+    'Nutrição Comportamental',
+    'Nutrição pré/pós bariatrica',
+    'Nutrição Esportiva',
+    'Nutrição nas Doenças Crônicas',
+    'Nutrição Clínica',
+    'Nutrição Materno-Infantil',
+    'Nutrição para Gestantes',
+    'Modulação intestinal',
+    'Obesidade',
+    'Emagrecimento',
+    'Hipertrofia',
 ];

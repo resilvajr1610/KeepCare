@@ -28,7 +28,7 @@ class CarrosselProfessionals extends StatelessWidget {
         child: Container(
           alignment: Alignment.center,
           height: height*0.15,
-          width: width*0.4,
+          width: width*0.5,
           color: Colors.white,
           child: Row(
             crossAxisAlignment: CrossAxisAlignment.center,

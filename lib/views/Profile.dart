@@ -100,6 +100,7 @@ class _ProfileState extends State<Profile> {
             )
           ],
         ),
+        bottomSheet: MenuSheet(),
         backgroundColor: PaletteColor.scaffold,
         body:_updating?Center(
           child: Column(

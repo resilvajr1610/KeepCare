@@ -19,6 +19,10 @@ class _ProfessionalsState extends State<Professionals> {
 
   @override
   Widget build(BuildContext context) {
+
+    double width = MediaQuery.of(context).size.width;
+    double height = MediaQuery.of(context).size.height;
+
     return Scaffold(
       backgroundColor: PaletteColor.scaffold,
       appBar: AppBar(
@@ -37,48 +41,56 @@ class _ProfessionalsState extends State<Professionals> {
           )
         ]
       ),
+      bottomSheet: MenuSheet(),
       body: SingleChildScrollView(
-        child: Padding(
-          padding: EdgeInsets.all(8),
+        child: Container(
+          height: height,
           child: Column(
             children: [
-              ListProfessional(
-                showAddress: _showAdrress,
-                colorAddress: _colorAddress??PaletteColor.white,
-                onPressedAddress: (){
-                  setState(() {
-                    _showAdrress= true;
-                    _showFone   = false;
-                    _showOpinion= false;
-                    _colorAddress = PaletteColor.white;
-                    _colorPhone = PaletteColor.greyLight;
-                    colorOpinion = PaletteColor.greyMedium;
-                  });
-                },
-                showPhone: _showFone,
-                colorPhone: _colorPhone??PaletteColor.greyLight,
-                onPressedPhone: (){
-                  setState(() {
-                    _showAdrress= false;
-                    _showFone   = true;
-                    _showOpinion= false;
-                    _colorAddress = PaletteColor.greyLight;
-                    _colorPhone = PaletteColor.white;
-                    colorOpinion = PaletteColor.greyMedium;
-                  });
-                },
-                showOpinion: _showOpinion,
-                colorOpinion: colorOpinion??PaletteColor.greyMedium,
-                onPressedOpinion: (){
-                  setState(() {
-                    _showAdrress= false;
-                    _showFone   = false;
-                    _showOpinion= true;
-                    _colorAddress = PaletteColor.greyLight;
-                    _colorPhone = PaletteColor.greyMedium;
-                    colorOpinion = PaletteColor.white;
-                  });
-                },
+              Padding(
+                padding: EdgeInsets.symmetric(horizontal: 8),
+                child: Column(
+                  children: [
+                    ListProfessional(
+                      showAddress: _showAdrress,
+                      colorAddress: _colorAddress??PaletteColor.white,
+                      onPressedAddress: (){
+                        setState(() {
+                          _showAdrress= true;
+                          _showFone   = false;
+                          _showOpinion= false;
+                          _colorAddress = PaletteColor.white;
+                          _colorPhone = PaletteColor.greyLight;
+                          colorOpinion = PaletteColor.greyMedium;
+                        });
+                      },
+                      showPhone: _showFone,
+                      colorPhone: _colorPhone??PaletteColor.greyLight,
+                      onPressedPhone: (){
+                        setState(() {
+                          _showAdrress= false;
+                          _showFone   = true;
+                          _showOpinion= false;
+                          _colorAddress = PaletteColor.greyLight;
+                          _colorPhone = PaletteColor.white;
+                          colorOpinion = PaletteColor.greyMedium;
+                        });
+                      },
+                      showOpinion: _showOpinion,
+                      colorOpinion: colorOpinion??PaletteColor.greyMedium,
+                      onPressedOpinion: (){
+                        setState(() {
+                          _showAdrress= false;
+                          _showFone   = false;
+                          _showOpinion= true;
+                          _colorAddress = PaletteColor.greyLight;
+                          _colorPhone = PaletteColor.greyMedium;
+                          colorOpinion = PaletteColor.white;
+                        });
+                      },
+                    ),
+                  ],
+                ),
               ),
             ],
           ),

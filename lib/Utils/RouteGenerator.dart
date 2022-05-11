@@ -5,7 +5,7 @@ class RouteGenerator{
       final args = settings.arguments;
 
       switch(settings.name){
-        case "/" :
+        case "/home" :
           return MaterialPageRoute(
               builder: (_) => Home()
           );
@@ -36,10 +36,6 @@ class RouteGenerator{
         case "/favorites" :
           return MaterialPageRoute(
               builder: (_) => Favorites()
-          );
-        case "/navigation" :
-          return MaterialPageRoute(
-              builder: (_) => Navigation()
           );
         case "/auth" :
           return MaterialPageRoute(

@@ -26,6 +26,7 @@ class _FavoritesState extends State<Favorites> {
             fontWeight: FontWeight.bold
         ),
       ),
+      bottomSheet: MenuSheet(),
       body: Text("Fav")
     );
   }

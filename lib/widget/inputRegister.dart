@@ -36,7 +36,7 @@ class InputRegister extends StatelessWidget {
         color: PaletteColor.white,
         borderRadius: BorderRadius.circular(5),
       ),
-      child: TextField(
+      child: TextFormField(
         obscureText: this.obscure,
         controller: this.controller,
         textAlign: TextAlign.start,

@@ -20,7 +20,7 @@ class _HomeState extends State<Home> {
           if(snapshot.connectionState == ConnectionState.waiting){
             return Center(child: CircularProgressIndicator());
           }else if (snapshot.hasData){
-            return Navigation();
+            return Search();
           }else if (snapshot.hasError){
             return Center(child: Text('Erro ao logar'));
           }else{

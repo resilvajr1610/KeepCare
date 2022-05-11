@@ -31,10 +31,11 @@ class _DetailsProfessionalsState extends State<DetailsProfessionals> {
             fontWeight: FontWeight.bold
         ),
       ),
+      bottomSheet: MenuSheet(),
       body: Center(
         child: SingleChildScrollView(
           child: Padding(
-            padding: const EdgeInsets.all(16),
+            padding: const EdgeInsets.only(top: 16,left: 16,right: 16,bottom: 75),
             child: Card(
               child: Column(
                 children: [

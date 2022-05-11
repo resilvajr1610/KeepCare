@@ -105,7 +105,7 @@ class _LoginState extends State<Login> {
                 child: Buttons(
                   onPressed: (){
                     final provider = Provider.of<GoogleSignInProvider>(context,listen:false);
-                    check?provider.googleLogin().then((_) => Navigator.pushReplacementNamed(context, "/navigation"))
+                    check?provider.googleLogin().then((_) => Navigator.pushReplacementNamed(context, "/search"))
                         :showSnackBar(context, 'Leia e concorde com os termos e condições de uso para avançar',_scaffoldKey);
                   },
                   text: 'Entrar com Google',

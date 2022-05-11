@@ -28,7 +28,7 @@ class _AuthState extends State<Auth> {
             password: _controllerPassword.text
         ).then((auth)async{
           print("logado");
-          Navigator.pushReplacementNamed(context, "/navigation");
+          Navigator.pushReplacementNamed(context, "/search");
         });
       }on FirebaseAuthException catch (e) {
         if(e.code =="unknown"){
@@ -68,8 +68,8 @@ class _AuthState extends State<Auth> {
             mainAxisSize: MainAxisSize.min,
             children: [
               SizedBox(
-                height: 90,
-                width: 90,
+                height: 180,
+                width: 180,
                 child:Image.asset("assets/logoColor.png"),
               ),
               InputRegister(

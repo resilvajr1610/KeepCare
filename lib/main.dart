@@ -19,7 +19,7 @@ class Start extends StatelessWidget {
     child: MaterialApp(
       debugShowCheckedModeBanner: false,
       home: Splash(),
-      initialRoute: "/",
+      initialRoute: "/home",
       onGenerateRoute: RouteGenerator.generateRoute,
     ),
   );

@@ -78,6 +78,7 @@ class _MapProfissionalsState extends State<MapProfissionals> {
               fontWeight: FontWeight.bold
           ),
       ),
+      bottomSheet: MenuSheet(),
       body: SingleChildScrollView(
         child: Padding(
           padding: const EdgeInsets.all(8.0),
@@ -92,13 +93,13 @@ class _MapProfissionalsState extends State<MapProfissionals> {
                     markers: _markers,
                   ),
                   width: width,
-                  height: height*0.6,
+                  height: height*0.55,
                   color: Colors.white,
                 ),
               ),
               Container(
                   height: height*0.16,
-                  padding: EdgeInsets.all(4),
+                  padding: EdgeInsets.only(right: 4,left: 4,top: 4,bottom: 5),
                   child: ListView.builder(
                     itemCount: usersList.length,
                     scrollDirection: Axis.horizontal,
