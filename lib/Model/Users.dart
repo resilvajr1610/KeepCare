@@ -1,10 +1,13 @@
+import '../Utils/export.dart';
+
 class Users{
 
   int id = 0;
+  String idRating = "";
   String email = "";
   String name = "";
   String title = "";
-  int rating = 0;
+  double rating = 0;
   String photo = "";
   String address = "";
   String phone = "";
@@ -33,4 +36,10 @@ class Users{
     required this.lat,
     required this.lon,
 });
+
+  Users.createId(String ProfessionalID){
+    FirebaseFirestore db = FirebaseFirestore.instance;
+    CollectionReference rating = db.collection("rating").doc(ProfessionalID).collection("rating");
+    this.idRating = rating.doc().id.toString();
+  }
 }

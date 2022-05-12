@@ -101,21 +101,21 @@ class _MapProfissionalsState extends State<MapProfissionals> {
                   height: height*0.16,
                   padding: EdgeInsets.only(right: 4,left: 4,top: 4,bottom: 5),
                   child: ListView.builder(
-                    itemCount: usersList.length,
+                    itemCount: allUsers.length,
                     scrollDirection: Axis.horizontal,
                       itemBuilder: (BuildContext context, int index) {
                         return CarrosselProfessionals(
                           onTap: () {
                             setState(() {
                               _markers.clear();
-                              lat = usersList[index].lat;
-                              lon = usersList[index].lon;
+                              lat = allUsers[index].lat;
+                              lon = allUsers[index].lon;
                               _locationProfessional(lat!,lon!);
                             });
                           },
-                          name: usersList[index].name,
-                          title: usersList[index].title,
-                          photo: usersList[index].photo,
+                          name: allUsers[index].name,
+                          title: allUsers[index].title,
+                          photo: allUsers[index].photo,
                         );
                       },
                   ),

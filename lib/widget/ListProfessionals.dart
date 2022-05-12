@@ -30,7 +30,7 @@ class ListProfessional extends StatelessWidget {
       height: 500,
       margin: EdgeInsets.symmetric(vertical: 5),
       child:ListView.separated(
-        itemCount: usersList.length,
+        itemCount: allUsers.length,
         separatorBuilder:(BuildContext context, int index)=> SizedBox(height: 5),
         itemBuilder: (BuildContext context, int index) {
           return Container(
@@ -47,7 +47,7 @@ class ListProfessional extends StatelessWidget {
                           CircleAvatar(
                             backgroundColor: PaletteColor.greyMedium,
                             radius: 30,
-                            backgroundImage: AssetImage(usersList[index].photo),
+                            backgroundImage: AssetImage(allUsers[index].photo),
                           ),
                           Padding(
                             padding: const EdgeInsets.all(8.0),
@@ -56,11 +56,11 @@ class ListProfessional extends StatelessWidget {
                               children: [
                                 Container(
                                   width: 110,
-                                  child: Text(usersList[index].name,
+                                  child: Text(allUsers[index].name,
                                     style: TextStyle(fontFamily: 'Nunito',color: PaletteColor.grey,fontSize: 16,fontWeight: FontWeight.bold),
                                   ),
                                 ),
-                                Text(usersList[index].title,
+                                Text(allUsers[index].title,
                                   style: TextStyle(fontFamily: 'Nunito',color: PaletteColor.grey,fontSize: 16,),
                                 ),
                               ],
@@ -70,7 +70,7 @@ class ListProfessional extends StatelessWidget {
                           SmoothStarRating(
                             starCount: 5,
                             color: Colors.yellow,
-                            rating: usersList[index].rating.toDouble(),
+                            rating: allUsers[index].rating.toDouble(),
                             borderColor: Colors.yellow,
                             size: 15,
                           )
@@ -115,21 +115,21 @@ class ListProfessional extends StatelessWidget {
                       visible: showAddress,
                       child: Container(
                         height: MediaQuery.of(context).size.height*0.2,
-                        child: Center(child: Text(usersList[index].address)),
+                        child: Center(child: Text(allUsers[index].address)),
                       ),
                     ),
                     Visibility(
                       visible: showPhone,
                       child: Container(
                         height: MediaQuery.of(context).size.height*0.1,
-                        child: Center(child: Text(usersList[index].phone)),
+                        child: Center(child: Text(allUsers[index].phone)),
                       ),
                     ),
                     Visibility(
                       visible: showOpinion,
                       child: Container(
                         height: MediaQuery.of(context).size.height*0.1,
-                        child: Center(child: Text(usersList[index].opinions)),
+                        child: Center(child: Text(allUsers[index].opinions)),
                       ),
                     ),
                   ],

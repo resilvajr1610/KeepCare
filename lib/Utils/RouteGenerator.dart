@@ -26,9 +26,7 @@ class RouteGenerator{
               builder: (_) => Professionals()
           );
         case "/detailsProfessionals" :
-          return MaterialPageRoute(
-              builder: (_) => DetailsProfessionals(args as int)
-          );
+          return MaterialPageRoute(builder: (_) => DetailsProfessionals(index: args as int));
         case "/map" :
           return MaterialPageRoute(
               builder: (_) => MapProfissionals()
@@ -40,6 +38,10 @@ class RouteGenerator{
         case "/auth" :
           return MaterialPageRoute(
               builder: (_) => Auth()
+          );
+        case "/opinions" :
+          return MaterialPageRoute(
+              builder: (_) => Opinions(args as int)
           );
         default :
           _erroRota();

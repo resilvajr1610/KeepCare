@@ -10,8 +10,8 @@ export '../views/Search.dart';
 export '../views/MapProfissionals.dart';
 export '../views/Favorites.dart';
 export '../views/Auth.dart';
-export '../widget/DetailsProfessionals.dart';
-export '../widget/MenuSheet.dart';
+export '../views/DetailsProfessionals.dart';
+export '../views/Opinions.dart';
 
 export 'colors.dart';
 export 'RouteGenerator.dart';
@@ -19,12 +19,17 @@ export '../widget/SnackBarModel.dart';
 export '../Model/UserDetails.dart';
 export '../Model/Users.dart';
 export '../Model/Data.dart';
+export '../Model/OpinionsModel.dart';
+export '../Model/FavoritesModel.dart';
 
 export '../widget/Buttons.dart';
 export '../widget/inputRegister.dart';
 export '../widget/ListProfessionals.dart';
 export '../widget/WidgetFavorites.dart';
 export '../widget/CarrosselProfessionals.dart';
+export '../widget/MenuSheet.dart';
+export '../widget/ContainerOpinion.dart';
+export '../widget/CardFavorites.dart';
 
 export '../provider/google_sign_in.dart';
 export '../provider/signFacebook.dart';

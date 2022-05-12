@@ -1,12 +1,12 @@
 import '../Utils/export.dart';
 
-List<Users> usersList = [
+List<Users> allUsers = [
   Users(
       id: 0,
       name:'Alessandra Job',
       email: '',
       address: 'R. Carlos Eduardo Monteiro de Lemos, 262 - sala 307 e 308\n\nClínica Via Régia Saúde Mental e Psicossocial',
-      rating: 5,
+      rating: 5.0,
       subtitle: 'Nutrição Comportamental\nNutrição pré/pós bariatrica\nNutrição Esportiva\nNutrição nas Doenças Crônicas',
       phone: '(27) 99895-5222',
       languages: 'Inglês',
@@ -27,7 +27,7 @@ List<Users> usersList = [
       name:'Vanuza Mildes',
       email: '',
       address: 'Rua Quinze de Novembro 3, Castelo Branco, Cariacica',
-      rating: 4,
+      rating: 4.0,
       subtitle: 'Nutrição Clínica\nNutrição Materno-Infantil\nNutrição para Gestantes\nModulação intestinal',
       phone: '(27) 99745-5135',
       languages: 'Alemão\nEspanhol',
@@ -44,7 +44,7 @@ List<Users> usersList = [
       name:'Nayara Amorim Ortelan ',
       email: '',
       address: 'Rua Moema 25, Divino Espírito Santo, Vila Velha',
-      rating: 5,
+      rating: 5.0,
       subtitle: 'Obesidade\nEmagrecimento\nHipertrofia',
       phone: '(27) 3014-8700',
       languages: 'Português',
@@ -62,7 +62,7 @@ List<Users> usersList = [
       name:'Rayssa Tolentino',
       email: '',
       address: 'Rua Mary Ubirajara, nº 40, Ed. Nacap, Sala 207, Santa Lúcia, Santa Lucia, Vitória',
-      rating: 3,
+      rating: 3.0,
       subtitle: '',
       phone: '',
       languages: '',
