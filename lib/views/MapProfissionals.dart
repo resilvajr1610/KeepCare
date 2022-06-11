@@ -70,7 +70,7 @@ class _MapProfissionalsState extends State<MapProfissionals> {
       backgroundColor: PaletteColor.scaffold,
       appBar: AppBar(
           centerTitle: true,
-          backgroundColor: PaletteColor.primiryColor,
+          backgroundColor: PaletteColor.primaryColor,
           title: Text('Profissionais'),
           titleTextStyle: TextStyle(
               fontFamily: 'Nunito',

@@ -80,7 +80,7 @@ class _ProfileState extends State<Profile> {
         key: _scaffoldKey,
         appBar: AppBar(
           centerTitle: true,
-          backgroundColor: PaletteColor.primiryColor,
+          backgroundColor: PaletteColor.primaryColor,
           title: Text('Perfil'),
           titleTextStyle: TextStyle(
               fontFamily: 'Nunito',
@@ -110,9 +110,9 @@ class _ProfileState extends State<Profile> {
             children: [
               Padding(
                 padding: const EdgeInsets.all(8.0),
-                child: Text('Enviando...',style: TextStyle(color: PaletteColor.primiryColor),),
+                child: Text('Enviando...',style: TextStyle(color: PaletteColor.primaryColor),),
               ),
-              CircularProgressIndicator(color: PaletteColor.primiryColor,),
+              CircularProgressIndicator(color: PaletteColor.primaryColor,),
             ],
           ),
         ):Center(
@@ -130,7 +130,7 @@ class _ProfileState extends State<Profile> {
                       textAlign: TextAlign.left,
                       style: TextStyle(
                         fontSize: 14,
-                        color: PaletteColor.primiryColor,
+                        color: PaletteColor.primaryColor,
                         fontWeight: FontWeight.w400,
                       ),
                     ),
@@ -152,7 +152,7 @@ class _ProfileState extends State<Profile> {
                       textAlign: TextAlign.left,
                       style: TextStyle(
                         fontSize: 14,
-                        color: PaletteColor.primiryColor,
+                        color: PaletteColor.primaryColor,
                         fontWeight: FontWeight.w400,
                       ),
                     ),
@@ -180,7 +180,7 @@ class _ProfileState extends State<Profile> {
                                 "Gênero",
                                 style: TextStyle(
                                   fontSize: 14,
-                                  color: PaletteColor.primiryColor,
+                                  color: PaletteColor.primaryColor,
                                   fontWeight: FontWeight.w400,
                                 ),
                               ),
@@ -215,7 +215,7 @@ class _ProfileState extends State<Profile> {
                               textAlign: TextAlign.left,
                               style: TextStyle(
                                 fontSize: 12,
-                                color: PaletteColor.primiryColor,
+                                color: PaletteColor.primaryColor,
                                 fontWeight: FontWeight.w400,
                               ),
                             ),
@@ -245,7 +245,7 @@ class _ProfileState extends State<Profile> {
                       textAlign: TextAlign.left,
                       style: TextStyle(
                         fontSize: 14,
-                        color: PaletteColor.primiryColor,
+                        color: PaletteColor.primaryColor,
                         fontWeight: FontWeight.w400,
                       ),
                     ),
@@ -278,7 +278,7 @@ class _ProfileState extends State<Profile> {
                       text: "Atualizar",
                       icons: Icons.facebook,
                       size: 0,
-                      colorButton: PaletteColor.primiryColor,
+                      colorButton: PaletteColor.primaryColor,
                       colorText: PaletteColor.white,
                       colorIcon: PaletteColor.white,
                     ),

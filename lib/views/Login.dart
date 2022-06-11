@@ -119,7 +119,7 @@ class _LoginState extends State<Login> {
               Padding(
                 padding: const EdgeInsets.all(10),
                 child: Text('ou',
-                  style: TextStyle(fontFamily: 'Nunito',color: PaletteColor.primiryColor,fontSize: 20),
+                  style: TextStyle(fontFamily: 'Nunito',color: PaletteColor.primaryColor,fontSize: 20),
                 ),
               ),
               InputRegister(
@@ -153,11 +153,11 @@ class _LoginState extends State<Login> {
                   children: [
                     Theme(
                       data: Theme.of(context).copyWith(
-                        unselectedWidgetColor: PaletteColor.primiryColor,
+                        unselectedWidgetColor: PaletteColor.primaryColor,
                       ),
                       child: Checkbox(
                           value: check,
-                          checkColor: PaletteColor.primiryColor,
+                          checkColor: PaletteColor.primaryColor,
                           activeColor: Colors.transparent,
                           onChanged: (value){
                           setState(() {
@@ -170,7 +170,7 @@ class _LoginState extends State<Login> {
                       child: Container(
                         width: width*0.7,
                         child: Text('Li e concordo com os Termos e condições de uso',
-                          style: TextStyle(fontFamily: 'Nunito',color: PaletteColor.primiryColor,fontSize: 14),
+                          style: TextStyle(fontFamily: 'Nunito',color: PaletteColor.primaryColor,fontSize: 14),
                         ),
                       ),
                     ),
@@ -185,7 +185,7 @@ class _LoginState extends State<Login> {
                   text: "Criar conta",
                   icons: Icons.facebook,
                   size: 0,
-                  colorButton: PaletteColor.primiryColor,
+                  colorButton: PaletteColor.primaryColor,
                   colorIcon: PaletteColor.white,
                   colorText: PaletteColor.white,
                 ),

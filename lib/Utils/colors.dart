@@ -7,7 +7,7 @@ class PaletteColor {
   static const Color greyMedium = Color(0xffD4D4D4);
   static const Color white =Color.fromRGBO(255, 255, 255, 1);
   static const Color scaffold = Color(0xffE9CBFF);
-  static const Color primiryColor = Color(0xff7030A0);
+  static const Color primaryColor = Color(0xff7030A0);
   static const Color primirySecundary = Color(0xff7A7A7A);
   static const Color blueFacebook = Color(0xff3B5998);
 }

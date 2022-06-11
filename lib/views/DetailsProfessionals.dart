@@ -75,7 +75,7 @@ class _DetailsProfessionalsState extends State<DetailsProfessionals> {
       backgroundColor: PaletteColor.scaffold,
       appBar: AppBar(
         centerTitle: true,
-        backgroundColor: PaletteColor.primiryColor,
+        backgroundColor: PaletteColor.primaryColor,
         title: Text('Detalhes'),
         titleTextStyle: TextStyle(
             fontFamily: 'Nunito',
@@ -127,7 +127,7 @@ class _DetailsProfessionalsState extends State<DetailsProfessionals> {
                                     GestureDetector(
                                       onTap: ()=>Navigator.pushNamed(context, '/opinions',arguments: user),
                                       child: Text('Avaliar',
-                                          style: TextStyle(fontFamily: 'Nunito',color: PaletteColor.primiryColor,fontSize: 20,fontWeight: FontWeight.bold)),
+                                          style: TextStyle(fontFamily: 'Nunito',color: PaletteColor.primaryColor,fontSize: 20,fontWeight: FontWeight.bold)),
                                     ),
                                   ],
                                 ),
@@ -146,7 +146,7 @@ class _DetailsProfessionalsState extends State<DetailsProfessionals> {
                                 _deleteFavorite(user);
                               }
                             }),
-                            child: Icon(favorite?Icons.favorite:Icons.favorite_border,color: PaletteColor.primiryColor,)
+                            child: Icon(favorite?Icons.favorite:Icons.favorite_border,color: PaletteColor.primaryColor,)
                         )
                       ],
                     ),

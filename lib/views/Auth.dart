@@ -95,7 +95,7 @@ class _AuthState extends State<Auth> {
                   text: "Entrar",
                   icons: Icons.facebook,
                   size: 0,
-                  colorButton: PaletteColor.primiryColor,
+                  colorButton: PaletteColor.primaryColor,
                   colorIcon: PaletteColor.white,
                   colorText: PaletteColor.white,
                 ),
@@ -105,7 +105,7 @@ class _AuthState extends State<Auth> {
                 child: Padding(
                   padding: const EdgeInsets.symmetric(vertical: 8.0),
                   child: Text('Não tem conta? Cadastre-se!',
-                    style: TextStyle(fontFamily: 'Nunito',color: PaletteColor.primiryColor,fontSize: 20,fontWeight: FontWeight.bold,
+                    style: TextStyle(fontFamily: 'Nunito',color: PaletteColor.primaryColor,fontSize: 20,fontWeight: FontWeight.bold,
                         decoration: TextDecoration.underline),
                   ),
                 ),

@@ -44,7 +44,7 @@ class _OpinionsState extends State<Opinions> {
         key: _scaffoldKey,
         appBar: AppBar(
           centerTitle: true,
-          backgroundColor: PaletteColor.primiryColor,
+          backgroundColor: PaletteColor.primaryColor,
           title: Text('Opiniões'),
           titleTextStyle: TextStyle(
               fontFamily: 'Nunito',
@@ -67,7 +67,7 @@ class _OpinionsState extends State<Opinions> {
                     textAlign: TextAlign.left,
                     style: TextStyle(
                       fontSize: 20,
-                      color: PaletteColor.primiryColor,
+                      color: PaletteColor.primaryColor,
                       fontWeight: FontWeight.w400,
                     ),
                   ),
@@ -114,7 +114,7 @@ class _OpinionsState extends State<Opinions> {
                         textAlign: TextAlign.left,
                         style: TextStyle(
                           fontSize: 14,
-                          color: PaletteColor.primiryColor,
+                          color: PaletteColor.primaryColor,
                           fontWeight: FontWeight.w400,
                         ),
                       ),
@@ -146,7 +146,7 @@ class _OpinionsState extends State<Opinions> {
                     text: "Avaliar",
                     icons: Icons.facebook,
                     size: 0,
-                    colorButton: PaletteColor.primiryColor,
+                    colorButton: PaletteColor.primaryColor,
                     colorText: PaletteColor.white,
                     colorIcon: PaletteColor.white,
                   ),

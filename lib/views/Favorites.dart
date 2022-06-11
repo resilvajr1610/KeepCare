@@ -36,7 +36,7 @@ class _FavoritesState extends State<Favorites> {
       backgroundColor: PaletteColor.scaffold,
       appBar: AppBar(
         centerTitle: true,
-        backgroundColor: PaletteColor.primiryColor,
+        backgroundColor: PaletteColor.primaryColor,
         title: Text('Favoritos'),
         titleTextStyle: TextStyle(
             fontFamily: 'Nunito',

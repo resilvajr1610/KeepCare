@@ -37,7 +37,7 @@ class _SplashState extends State<Splash> {
     double width = MediaQuery.of(context).size.width;
     double height = MediaQuery.of(context).size.height;
     return Scaffold(
-        backgroundColor: PaletteColor.primiryColor,
+        backgroundColor: PaletteColor.primaryColor,
         body: Center(
           child: Column(
             mainAxisSize: MainAxisSize.min,

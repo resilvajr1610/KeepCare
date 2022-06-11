@@ -80,7 +80,7 @@ class _SearchState extends State<Search> {
     return Scaffold(
         appBar: AppBar(
           centerTitle: true,
-          backgroundColor: PaletteColor.primiryColor,
+          backgroundColor: PaletteColor.primaryColor,
           title: Text('Procurar Profissional'),
           titleTextStyle: TextStyle(
               fontFamily: 'Nunito',
@@ -155,7 +155,6 @@ class _SearchState extends State<Search> {
                         _debounce = Timer(const Duration(milliseconds: 1000),(){
                           if(value.isNotEmpty){
                             autoCompleteSearch(value);
-
                           }
                         });
                       },
@@ -186,7 +185,7 @@ class _SearchState extends State<Search> {
                           margin: EdgeInsets.symmetric(horizontal: 20),
                           color: Colors.white,
                           child: ListTile(
-                            leading: Icon(Icons.location_on,color: PaletteColor.primiryColor,),
+                            leading: Icon(Icons.location_on,color: PaletteColor.primaryColor,),
                             title: Text(predictions[index].description.toString()),
                             onTap: ()async{
                               final placeId = predictions[index].placeId;
@@ -215,7 +214,7 @@ class _SearchState extends State<Search> {
                           textAlign: TextAlign.left,
                           style: TextStyle(
                             fontSize: 16,
-                            color: PaletteColor.primiryColor,
+                            color: PaletteColor.primaryColor,
                             fontWeight: FontWeight.bold,
                           ),
                         ),

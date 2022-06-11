@@ -27,7 +27,7 @@ class _ProfessionalsState extends State<Professionals> {
       backgroundColor: PaletteColor.scaffold,
       appBar: AppBar(
         centerTitle: true,
-        backgroundColor: PaletteColor.primiryColor,
+        backgroundColor: PaletteColor.primaryColor,
         title: Text('Profissionais'),
         titleTextStyle: TextStyle(
             fontFamily: 'Nunito',

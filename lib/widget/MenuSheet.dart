@@ -6,7 +6,7 @@ class MenuSheet extends StatelessWidget {
   Widget build(BuildContext context) {
     return Container(
         height: 65,
-        color: PaletteColor.primiryColor,
+        color: PaletteColor.primaryColor,
         child: Row(
           mainAxisAlignment: MainAxisAlignment.spaceAround,
           children: [

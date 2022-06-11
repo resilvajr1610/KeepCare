@@ -29,7 +29,7 @@ class _HomeState extends State<Home> {
                 mainAxisSize: MainAxisSize.min,
                 children: [
                   Text('Bem-vindo a',
-                    style: TextStyle(fontFamily: 'Nunito',color: PaletteColor.primiryColor,fontSize: 32),
+                    style: TextStyle(fontFamily: 'Nunito',color: PaletteColor.primaryColor,fontSize: 32),
                   ),
                   SizedBox(
                     height: 180,
@@ -43,7 +43,7 @@ class _HomeState extends State<Home> {
                       text: "Comece agora",
                       icons: Icons.facebook,
                       size: 0,
-                      colorButton: PaletteColor.primiryColor,
+                      colorButton: PaletteColor.primaryColor,
                       colorText: PaletteColor.white,
                       colorIcon: PaletteColor.white,
                     ),
@@ -59,7 +59,7 @@ class _HomeState extends State<Home> {
                     child: Padding(
                       padding: const EdgeInsets.symmetric(vertical: 8.0),
                       child: Text('Entrar',
-                        style: TextStyle(fontFamily: 'Nunito',color: PaletteColor.primiryColor,fontSize: 20,fontWeight: FontWeight.bold,
+                        style: TextStyle(fontFamily: 'Nunito',color: PaletteColor.primaryColor,fontSize: 20,fontWeight: FontWeight.bold,
                             decoration: TextDecoration.underline),
                       ),
                     ),
