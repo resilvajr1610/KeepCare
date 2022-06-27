@@ -24,7 +24,7 @@ class CardFavorites extends StatelessWidget {
                     crossAxisAlignment: CrossAxisAlignment.start,
                     children: [
                       Container(
-                        width: 200,
+                        width: 180,
                         child: Text(allUsers[_favoritesModel.professionalID!].name,
                           style: TextStyle(fontFamily: 'Nunito',color: PaletteColor.grey,fontSize: 16,fontWeight: FontWeight.bold),
                         ),

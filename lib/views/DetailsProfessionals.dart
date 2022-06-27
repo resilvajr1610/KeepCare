@@ -108,26 +108,26 @@ class _DetailsProfessionalsState extends State<DetailsProfessionals> {
                             crossAxisAlignment: CrossAxisAlignment.start,
                             children: [
                               Text(allUsers[user].name,
-                                style: TextStyle(fontFamily: 'Nunito',color: PaletteColor.grey,fontSize: 20,fontWeight: FontWeight.bold),
+                                style: TextStyle(fontFamily: 'Nunito',color: PaletteColor.grey,fontSize: 16,fontWeight: FontWeight.bold),
                               ),
                               Text(allUsers[user].title,
-                                style: TextStyle(fontFamily: 'Nunito',color: PaletteColor.grey,fontSize: 16,),
+                                style: TextStyle(fontFamily: 'Nunito',color: PaletteColor.grey,fontSize: 12,),
                               ),
                               Container(
-                                width: width*0.55,
+                                width: width*0.45,
                                 child: Row(
                                   children: [
                                     SmoothStarRating(
                                       rating: rating,
                                       color: Colors.orangeAccent,
                                       borderColor: Colors.orangeAccent,
-                                      size: 20,
+                                      size: 16,
                                     ),
                                     Spacer(),
                                     GestureDetector(
                                       onTap: ()=>Navigator.pushNamed(context, '/opinions',arguments: user),
                                       child: Text('Avaliar',
-                                          style: TextStyle(fontFamily: 'Nunito',color: PaletteColor.primaryColor,fontSize: 20,fontWeight: FontWeight.bold)),
+                                          style: TextStyle(fontFamily: 'Nunito',color: PaletteColor.primaryColor,fontSize: 16,fontWeight: FontWeight.bold)),
                                     ),
                                   ],
                                 ),
@@ -193,6 +193,7 @@ class _DetailsProfessionalsState extends State<DetailsProfessionals> {
                     ratingList: [
                       _historyList.length!=0?Container(
                         height: height * 0.5,
+                        width: width*0.7,
                         child: ListView.builder(
                             itemCount: _historyList.length,
                             itemBuilder: (context,index){

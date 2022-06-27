@@ -17,6 +17,7 @@ class WidgetFavorites extends StatelessWidget {
     return Column(
       children: [
         Container(
+          width: 800,
           alignment: Alignment.centerLeft,
           padding: const EdgeInsets.all(8),
           child: Text(this.title,

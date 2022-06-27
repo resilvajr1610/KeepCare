@@ -182,7 +182,7 @@ class _SearchState extends State<Search> {
                       itemCount: predictions.length,
                       itemBuilder: (context, index){
                         return Card(
-                          margin: EdgeInsets.symmetric(horizontal: 20),
+                          margin: EdgeInsets.symmetric(horizontal: 10),
                           color: Colors.white,
                           child: ListTile(
                             leading: Icon(Icons.location_on,color: PaletteColor.primaryColor,),
@@ -194,7 +194,6 @@ class _SearchState extends State<Search> {
                                 setState(() {
                                   startPosition = details.result;
                                   _controllerPlaces.text = details.result!.name!;
-                                  print('aaaaaaaaaaaaaaaaaaa:' +_controllerPlaces.text);
                                   predictions=[];
                                   search(_controllerPlaces.text);
                                 });
@@ -246,12 +245,12 @@ class _SearchState extends State<Search> {
                                 itemBuilder: (BuildContext context, int index) {
                                   return Container(
                                     color: PaletteColor.scaffold,
-                                    padding: EdgeInsets.symmetric(horizontal: width*0.1),
+                                    padding: EdgeInsets.symmetric(horizontal: width*0.08),
                                     child: GestureDetector(
                                       onTap: ()=>Navigator.pushNamed(context, '/detailsProfessionals',arguments: index),
                                       child: Card(
                                         child: Container(
-                                          padding: const EdgeInsets.symmetric(vertical: 8.0,horizontal: 16),
+                                          padding: const EdgeInsets.symmetric(vertical: 8.0,horizontal: 8),
                                           child: Column(
                                             children: [
                                               Row(
@@ -268,9 +267,9 @@ class _SearchState extends State<Search> {
                                                       crossAxisAlignment: CrossAxisAlignment.start,
                                                       children: [
                                                         Container(
-                                                          width: 200,
+                                                          width: 160,
                                                           child: Text(users[index].name,
-                                                            style: TextStyle(fontFamily: 'Nunito',color: PaletteColor.grey,fontSize: 16,fontWeight: FontWeight.bold),
+                                                            style: TextStyle(fontFamily: 'Nunito',color: PaletteColor.grey,fontSize: 14,fontWeight: FontWeight.bold),
                                                           ),
                                                         ),
                                                         Text(users[index].title,
